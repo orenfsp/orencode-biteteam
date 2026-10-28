@@ -50,13 +50,6 @@ make reset           # остановить и УДАЛИТЬ данные (БД
 docker compose up -d --build backend   # пересобрать только бэк после правок
 ```
 
-## Что изменено в исходниках
-
-- `backend/app/services/document_service.py` — PDF искал шрифт Arial только по пути `C:/Windows/Fonts`,
-  в Linux-контейнере кириллица превращалась в квадраты. Добавлен поиск Liberation Sans/DejaVu
-  (в образ ставится `fonts-liberation`). Остальной код бэка и фронта не менялся.
-- `frontend/config.js` — `API_BASE` теперь `/api/v1` (тот же origin).
-- Папка `frontend/dev/` (мок-API) в образ не включена.
 
 ## На сервере с HTTPS
 
